@@ -1,10 +1,10 @@
 # Roadmap
 
-Updated from owner handoffs on 2026-11-16. Statuses distinguish delivered offline functionality from remaining live qualification. No fixed delivery dates are promised before maintainers, lab access, and the initial support matrices are known.
+Updated from owner handoffs on 2026-11-16. Statuses distinguish published offline functionality, lab preparation, exercised checks, and qualification. No fixed delivery dates are promised before designated targets, expected facts, and the support matrices are known.
 
 ## Status and boundaries
 
-BEC 0.7.0, CrumbTrail 0.2.0, and HashBrown 0.2.0 are published with their comparison, session, and preflight features. Owners reported 53, 44, and 52 passing tests respectively, fresh-wheel isolated suites, and installed smoke checks. CrumbTrail also passed an actual Velociraptor 0.77.3 inert-fixture exercise and raw verification. HashBrown's extended installed smoke covered JSON/text/failure paths without changing case bytes or mtimes; both inert images verified, and imports resolved from site-packages with neither sibling tool installed. Exact published revisions and evidence belong in the coordinator's [release validation ledger](docs/release-validation.md); current hosted CI for these updates is not asserted here.
+BEC 0.7.0, CrumbTrail 0.2.0, and HashBrown 0.2.0 form the historical offline-feature baseline recorded in the [completed offline iteration](docs/current-iteration.md). Subsequent BEC and HashBrown lab helpers and CrumbTrail 0.2.1 are published with passing fresh-wheel checks and green Windows/Linux CI. CrumbTrail's runner, corpus manifest, and docs are complete. The coordinator owns exact revisions, counts, and CI evidence in the [release validation ledger](docs/release-validation.md); the [lab record](docs/lab-iteration.md) preserves the bounded results and open gates.
 
 BEC remains email/account focused. CrumbTrail remains offline/local; remote orchestration is deferred. HashBrown owns acquisition and custody in its own package. Live tenant qualification, exported-EVTX acceptance across supported systems, and actual RAM/physical-disk capture remain open. Offline releases do not close those lab gates.
 
@@ -12,9 +12,9 @@ BEC remains email/account focused. CrumbTrail remains offline/local; remote orch
 
 Keep functionality within its owner. Email provider clients stay in BEC; Windows event interpretation stays in CrumbTrail; acquisition and binary transfer stay in HashBrown. Future work consumes the relevant owner handoff. There is no shared engine or continuing synchronization of mixed-purpose implementations.
 
-## Current milestone status
+## Completed offline feature milestones
 
-The three bounded milestones add responder-visible behavior through independent implementations. Owner evidence is summarized below; the detailed acceptance contract and limits are retained in the [iteration record](docs/current-iteration.md).
+The three bounded milestones added responder-visible behavior through independent implementations. Their release-time evidence is summarized below; the detailed acceptance contract and limits remain in the [offline iteration record](docs/current-iteration.md). These counts are historical and do not represent the subsequent lab-helper changes.
 
 | Milestone | Single owner | Delivered behavior | Evidence and remaining work |
 | --- | --- | --- | --- |
@@ -26,17 +26,17 @@ CrumbTrail's native selected event IDs are unchanged. New logoff/startup boundar
 
 Each project releases independently. There is no common package, schema, evidence store, or installation milestone blocking it. The coordinator owns Git, CI, publication, and the authoritative [release ledger](docs/release-validation.md). The roadmap owner records supplied facts and stops; it does not rerun sibling tests or assert new release evidence.
 
-## Next priorities and qualification gates
+## Active lab priorities and gate status
 
-The next priority for each owner is its qualification gate below: E2 for BEC, W2 for CrumbTrail, and A2 for HashBrown. Live credentials, curated EVTX data, and a designated capture VM are unavailable in this iteration. These are resource dependencies, not failed tool tests. Passing offline checks does not close them; new connector or parser projects are not automatically authorized while waiting.
+E2, W2, and A2 remain the next priorities. Preparation and limited exercised evidence do not grant broad qualification. See the [lab iteration packet](docs/lab-iteration.md) for the required handoffs. The coordinator requested tenant and VM designations; no response has supplied them. Do not substitute an available account, host, device, or destination for a designated target.
 
-| Gate | Single owner | Required resource and exit evidence |
-| --- | --- | --- |
-| E2: live email qualification | BEC agent | Authorized tenants with known activity: validate actual authentication, permissions, retention, pagination, and available provider data, then confirm that comparison outputs respect real coverage limits |
-| W2: Windows/Sysmon and responder acceptance | Windows triage agent | Curated exported EVTX across a declared Windows/Sysmon matrix and a responder reviewer: validate real parser fields, session identifier/boundary behavior, chronology, false positives, telemetry gaps, and measured throughput |
-| A2: native disk/RAM qualification | Acquisition agent | A designated authorized Windows VM and suitable storage: exercise actual physical-disk and RAM driver/device paths, assess prerequisites and resource estimates, verify expected acquisition extent and independently readable content, and record driver compatibility, read errors, interruption behavior, and throughput |
+| Gate | Single owner | Current preparation/exercised evidence | Next action and exit requirement |
+| --- | --- | --- | --- |
+| E2: live email qualification | BEC agent | Repository-only lab runner complete and published; fresh-wheel checks/CI pass. Live exercise **NOT EXECUTED** | Wait for the designated tenant profile, accounts, window, and provider-native expected events; then verify actual authentication, permissions, retention, pagination, source coverage, and observed evidence against expected facts |
+| W2: Windows/Sysmon and responder acceptance | Windows triage agent | Code/runner/corpus work complete for 0.2.1. System and subsecond-window checks pass; Security identities/providers/logon fields agree. Strict 1-microsecond precision **FAILED 8/181**, maximum 1.3 microseconds, with threshold unchanged | W2 stays partial. Exact precision, a declared OS/channel matrix, and responder signoff remain open; retain the failure and documented upstream quantization. No further corpus work this iteration |
+| A2: native disk/RAM qualification | Acquisition agent | Repository-only helpers/runbook complete and published; fresh-wheel checks/CI pass; fixture-only preparation verified hash mechanics. Physical disk/RAM capture **NOT EXECUTED** | Wait for designated VM, device, and evidence destination; perform actual capture and human independent-reader/content/extent validation. Qualification stays `not_granted` absent that evidence; record compatibility, read errors, interruption behavior, and throughput |
 
-Hashes and successful transfer establish received-byte integrity against a reference, not acquisition completeness. Native inert-fixture exercises remain valuable evidence within their recorded scope.
+The final file-only results are bounded evidence, not qualification across every Windows version or event channel. Security-corpus precision remains a recorded failure attributed by the owner to upstream FILETIME-to-float quantization; the threshold was not widened. Original and collector copies were unchanged, while Windows may rewrite only its separate oracle copy. Hashes and successful transfer establish received-byte integrity against a reference, not acquisition completeness. No new connectors, shared runtime, or parser projects are authorized by this checkpoint.
 
 ## Responder outcomes first
 

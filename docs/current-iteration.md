@@ -1,4 +1,6 @@
-# Current iteration: offline responder workflows
+# Completed iteration: offline responder workflows
+
+This is the historical comparison/session/preflight release record; its counts and commits describe that release snapshot. Final subsequent lab preparation, bounded exercised results, and the still-open E2/W2/A2 gates are tracked in the [lab iteration](lab-iteration.md). Use the coordinator ledger for the latest revision of each tool.
 
 Assigned and updated 2026-11-16 from owner packets supplied by the coordinator. BEC, CrumbTrail, and HashBrown have implemented, fixture-validated, and published their bounded improvements. This record summarizes supplied evidence; the roadmap agent did not inspect sibling code or rerun its tests.
 
@@ -8,7 +10,7 @@ Assigned and updated 2026-11-16 from owner packets supplied by the coordinator. 
 | W3 / CrumbTrail 0.2.0 | 44 tests; fresh-wheel isolated suite/smoke; actual Velociraptor 0.77.3 inert lab and raw verification passed | Published at `690b37a14185b7fe564e4795dc94eebe792afe9d` |
 | A3 / HashBrown 0.2.0 | 52 tests passed from a fresh independent wheel under Python `-I`; extended installed smoke passed JSON/text/failure paths with unchanged case bytes/mtimes; both inert images verified | Published at `9b6e19e8b3e544f70cf74d5ec33655d34940da06` |
 
-The coordinator's [release ledger](release-validation.md) owns immutable published references, exact commands, and release decisions. Its verified current CI results are successful for all three published revisions, including HashBrown run `43826907895`. Earlier releases and fixture results remain historical evidence rather than substitutes for new acceptance.
+The coordinator's [release ledger](release-validation.md) owns immutable published references, exact commands, and release decisions. At this historical release handoff, CI was successful for all three listed revisions, including HashBrown run `43826907895`. These results are historical evidence rather than substitutes for acceptance of subsequent changes.
 
 No live credentials, curated exported-EVTX corpus, or designated capture VM are available. No sibling imports, shared runtime/install/store, remote orchestration, broad new connectors, or automatic agent/API loops were added to this scope. The regression contracts below remain useful after implementation; scenario-level evidence belongs in each owner's validation record and the coordinator ledger.
 

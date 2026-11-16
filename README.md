@@ -19,9 +19,9 @@ Each executable project targets its own pip-installable distribution, CLI, code,
 
 Users may choose one tool or several. Each owns its local evidence format and reporting appropriate to its scope. Future file-based interchange may be proposed when a concrete workflow warrants it; it is neither implemented nor required by this plan.
 
-## Current status
+## Published offline feature baseline
 
-Owner results received on 2026-11-16:
+Historical results for the comparison/session/preflight releases; the lab checkpoint below records subsequent work:
 
 | Tool | Delivered status and local evidence |
 | --- | --- |
@@ -29,19 +29,31 @@ Owner results received on 2026-11-16:
 | CrumbTrail 0.2.0 | Published sessions CLI, `sessions.json`, and report section; 44 tests, fresh-wheel isolated suite/smoke, and native Velociraptor 0.77.3 inert-fixture/raw-verification checks passed |
 | HashBrown 0.2.0 | Published preflight; 52 tests passed from a fresh independent wheel under Python `-I`; extended installed smoke passed JSON/text/failure paths with unchanged case bytes/mtimes, and both inert images verified |
 
-These are owner/coordinator-reported results, not checks rerun by the roadmap agent. See the coordinator's [revision-specific validation ledger](docs/release-validation.md) for immutable published revisions, commands, and limitations. This summary makes no claim about current hosted CI for the new revisions.
+These are owner/coordinator-reported historical results, not checks rerun by the roadmap agent. See the coordinator's [revision-specific validation ledger](docs/release-validation.md) for immutable published revisions, commands, and limitations; the latest lab checkpoint follows below.
 
 BEC covers email/account compromise. CrumbTrail supports offline event imports, local exported-EVTX parsing, and session views; remote server orchestration remains deferred. Its native selection of event IDs is unchanged: the new logoff/startup boundary handling is available for imported records. Provider-aware derived event IDs can change when a case is rebuilt. HashBrown owns acquisition/intake, integrity, custody, and preflight, independently of both tools. Future memory/filesystem analysis remains separate work.
 
 **Live RAM driver/device capture and physical-disk acquisition have not been tested.** Fixture transfer and hash verification do not prove that a complete or correct disk/RAM image was acquired.
 
+## Current lab checkpoint
+
+The final owner packets distinguish completed preparation from exercised validation. All three tools are published with passing fresh-wheel checks and green Windows/Linux CI. CrumbTrail 0.2.1 includes its completed runner, corpus manifest, and documentation. Exact revisions and CI evidence belong in the [release ledger](docs/release-validation.md).
+
+| Gate | Preparation and exercised scope | Qualification status |
+| --- | --- | --- |
+| BEC E2 | Repository-only live-lab runner complete and published; no designated tenant profile, accounts, time window, or provider-native expected events supplied | Live exercise **NOT EXECUTED**; E2 remains open |
+| CrumbTrail W2 | Whole-second normalization and subsecond native-window filtering fixed. System/window checks pass; Security identities/providers/logon fields agree, but the unchanged strict 1-microsecond gate **FAILED 8/181**, maximum 1.3 microseconds | W2 partial; exact precision, broader OS/channel matrix, and responder signoff remain open |
+| HashBrown A2 | Repository-only helpers/runbook complete and published; fixture preparation verified hash mechanics. No designated VM, device, or evidence destination supplied | Physical disk/RAM capture **NOT EXECUTED**; qualification remains `not_granted` without actual capture and human independent-reader validation |
+
+No private event data, paths, or host identifiers are included. The [lab iteration record](docs/lab-iteration.md) contains the final bounded results and outstanding inputs. No further corpus work is planned in this iteration.
+
 ## Next priorities
 
-1. **BEC owner (E2):** qualify the existing email and comparison workflow against known activity in authorized tenants once credentials are available.
-2. **CrumbTrail owner (W2):** validate exported-EVTX/session behavior against a curated Windows/Sysmon corpus and a responder reviewer, including missing boundaries and repeated identifiers.
-3. **HashBrown owner (A2):** qualify preflight and actual disk/RAM acquisition on the designated lab VM, including independently readable content and capture extent.
+1. **BEC owner (E2):** retain the prepared runner; execute only after the tenant profile, accounts, window, and native expected events are designated, then compare collected evidence with those expected facts.
+2. **CrumbTrail owner (W2):** retain the failed strict-precision result; exact precision, the declared Windows/Sysmon matrix, and responder review remain requirements for a later qualification exercise. The threshold has not been widened.
+3. **HashBrown owner (A2):** retain the prepared helpers; execute only after the VM, device, and evidence destination are designated, then record actual capture and human independent-reader validation.
 
-The [iteration record](docs/current-iteration.md) distinguishes delivered functionality, reported test evidence, and pending work. Live credentials, curated EVTX data, and a designated capture VM remain unavailable; offline success does not close those gates. Later memory/disk parsing still requires its own project and responder-value gate.
+The [completed offline iteration](docs/current-iteration.md) records the comparison/session/preflight releases. The [lab iteration](docs/lab-iteration.md) records completed preparation and bounded file-only checks; requested tenant and VM designations remain unanswered. Those checks provide partial evidence and do not close the broader matrix or precision gates. Later memory/disk parsing still requires its own project and responder-value gate.
 
 The [roadmap](ROADMAP.md) defines deliverables, prerequisites, tests, and one owner per milestone. [Agent handoffs](docs/agent-handoffs.md) define how owners exchange facts without repeating broad discovery. [AGENTS.md](AGENTS.md) and the [roadmap agent brief](agents/roadmap.md) limit work in this repository.
 
