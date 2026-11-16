@@ -1,0 +1,29 @@
+name: Documentation checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.12'
+      - name: Check local Markdown links and agent TOML
+        shell: python
+        run: |
+          import pathlib, re, tomllib
+          root = pathlib.Path.cwd()
+          for file in root.rglob('*.md'):
+              for href in re.findall(r'\[[^\]]*\]\(([^)]+)\)', file.read_text(encoding='utf-8')):
+                  if '://' not in href and not href.startswith('#'):
+                      target = (file.parent / href.split('#')[0]).resolve()
+                      assert target.is_relative_to(root) and target.exists(), (file, href)
+          for file in (root / '.codex').rglob('*.toml'):
+              tomllib.loads(file.read_text(encoding='utf-8'))
+          print('Local links and agent configuration passed.')

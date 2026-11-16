@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+credentials/
+cases/
+*.pem
+*.key
+*.pfx
+*.p12
