@@ -1,4 +1,6 @@
-# Lab iteration: preparation and exercised scope
+# Historical lab iteration: preparation and exercised scope
+
+**Historical snapshot for CrumbTrail 0.2.1.** The eight precision failures recorded below were closed in CrumbTrail 0.3.0: System 1/1 and Security 181/181 now have 0 ns differences, with the 1,000 ns threshold unchanged. See the [current offline evidence iteration](offline-evidence-iteration.md) for that result and the new BEC/HashBrown features. E2 and physical A2 remain unexecuted; the broader W2 matrix remains open.
 
 Final bounded checkpoint: 2026-11-16, based only on owner packets supplied by the coordinator. The roadmap agent did not inspect sibling source, run tests, access tenants, inspect private event files, or operate capture targets. Exact published revisions and CI belong in the coordinator-owned [release ledger](release-validation.md).
 
@@ -26,7 +28,7 @@ Once those inputs are available, exercise the bounded runner against the designa
 
 Until that exercise is performed, report E2 as **NOT EXECUTED**, even if all offline runner tests pass. No new provider connector is part of this milestone.
 
-## W2: completed bounded exercise, precision gate still failed
+## W2: historical precision failure, closed in 0.3.0
 
 **Owner: Windows triage agent.** CrumbTrail 0.2.1 fixes whole-second timestamp normalization by preferring the native timestamp and fixes subsecond native-window filtering. The final file-only results are:
 
@@ -44,7 +46,7 @@ The owner documented upstream FILETIME-to-float quantization behind the remainin
 
 Original and collector copies were unchanged. Windows may rewrite only its separately created oracle copy; that copy is distinct from preserved source evidence. No private identifiers or event payloads are included here. Runner, corpus manifest, and documentation are complete, with no further corpus work in this iteration.
 
-W2 remains partial. Exact precision, the declared Windows/Sysmon OS/channel matrix, and responder signoff remain open, alongside the broader assessment of session boundaries, telemetry gaps, false positives, and throughput. Keep private-file results separate from public reproducibility and matrix-wide qualification. Publication of 0.2.1 does not authorize remote collection or grant W2; its final CI outcome belongs in the coordinator ledger.
+At this 0.2.1 checkpoint, W2 was partial with exact precision, the declared Windows/Sysmon OS/channel matrix, and responder signoff open. The subsequent 0.3.0 precision closure is recorded in the [current iteration](offline-evidence-iteration.md); the broader matrix and review remain open. Keep private-file results separate from public reproducibility and matrix-wide qualification. Publication of 0.2.1 did not authorize remote collection or grant W2.
 
 ## A2: prepare without granting capture qualification
 
@@ -58,4 +60,4 @@ Once designated resources are available, the acceptance packet must record the a
 
 Each owner returns only its own changed paths, final checks, exercised inputs by non-sensitive description, known limitations, and gate disposition. Distinguish **prepared**, **exercised on a stated input**, and **qualified for a declared matrix**. These are evidence boundaries, not interchangeable completion labels.
 
-The coordinator handles publication, CI, immutable evidence references, and target clarification. The tenant/VM request remains unanswered. Preparation and bounded file-only exercises are complete for this iteration; E2 and physical A2 are unexecuted, and W2 remains partial with its precision failure preserved. Keep E2/W2/A2 as the priorities. No further corpus expansion, connector, parser, or shared-service initiative is assigned here. The roadmap owner records these facts and stops.
+This historical iteration ended with preparation and bounded file-only exercises complete, E2 and physical A2 unexecuted, and the W2 precision failure preserved. Subsequent work closed that precision failure as documented in the [current iteration](offline-evidence-iteration.md). Current publication/CI references belong to the coordinator ledger; this snapshot does not describe the latest gate status.
