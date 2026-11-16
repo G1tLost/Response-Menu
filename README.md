@@ -21,20 +21,27 @@ Users may choose one tool or several. Each owns its local evidence format and re
 
 ## Current status
 
-As of 2026-11-16, the initial standalone versions are BEC 0.6.0, CrumbTrail 0.1.0 and HashBrown 0.1.0. Each was built as its own wheel, installed in a separate fresh environment, and exercised outside its source checkout. Their suites passed **40, 22 and 30 tests**, respectively. CrumbTrail and HashBrown run with the Python standard library; BEC has its own timezone and optional provider dependencies.
+Owner results received on 2026-11-16:
 
-CrumbTrail's native Velociraptor fixture yielded 21 Windows events, four findings and zero gaps. HashBrown's native client/server fixture preserved both images and resumed an interrupted transfer at its saved 1 MiB checkpoint using the original flow. These are independent tests of the new packages. See the [revision-specific validation ledger](docs/release-validation.md) for commands, evidence and limitations.
+| Tool | Delivered status and local evidence |
+| --- | --- |
+| BEC 0.7.0 | Published saved-case comparison; 53 tests, fresh-wheel isolated suite, and base-only installed smoke passed |
+| CrumbTrail 0.2.0 | Published sessions CLI, `sessions.json`, and report section; 44 tests, fresh-wheel isolated suite/smoke, and native Velociraptor 0.77.3 inert-fixture/raw-verification checks passed |
+| HashBrown 0.2.0 | Published preflight; 52 tests passed from a fresh independent wheel under Python `-I`; extended installed smoke passed JSON/text/failure paths with unchanged case bytes/mtimes, and both inert images verified |
 
-BEC covers email/account compromise. CrumbTrail v0.1 supports offline event imports and explicit local exported-EVTX parsing; remote server orchestration is deferred. HashBrown owns image capture/intake and custody, with no dependency on either tool. Future memory/filesystem analysis is planned as separate work.
+These are owner/coordinator-reported results, not checks rerun by the roadmap agent. See the coordinator's [revision-specific validation ledger](docs/release-validation.md) for immutable published revisions, commands, and limitations. This summary makes no claim about current hosted CI for the new revisions.
+
+BEC covers email/account compromise. CrumbTrail supports offline event imports, local exported-EVTX parsing, and session views; remote server orchestration remains deferred. Its native selection of event IDs is unchanged: the new logoff/startup boundary handling is available for imported records. Provider-aware derived event IDs can change when a case is rebuilt. HashBrown owns acquisition/intake, integrity, custody, and preflight, independently of both tools. Future memory/filesystem analysis remains separate work.
 
 **Live RAM driver/device capture and physical-disk acquisition have not been tested.** Fixture transfer and hash verification do not prove that a complete or correct disk/RAM image was acquired.
 
-## Delivery order
+## Next priorities
 
-1. Preserve useful email investigation behavior in standalone BEC.
-2. Deliver focused Windows event triage in standalone CrumbTrail.
-3. Make acquisition and its limitations explicit in standalone HashBrown, then qualify its real device paths in an authorized lab.
-4. Consider bounded memory or disk analysis as later separate projects only after responder value and maintenance capacity are demonstrated.
+1. **BEC owner (E2):** qualify the existing email and comparison workflow against known activity in authorized tenants once credentials are available.
+2. **CrumbTrail owner (W2):** validate exported-EVTX/session behavior against a curated Windows/Sysmon corpus and a responder reviewer, including missing boundaries and repeated identifiers.
+3. **HashBrown owner (A2):** qualify preflight and actual disk/RAM acquisition on the designated lab VM, including independently readable content and capture extent.
+
+The [iteration record](docs/current-iteration.md) distinguishes delivered functionality, reported test evidence, and pending work. Live credentials, curated EVTX data, and a designated capture VM remain unavailable; offline success does not close those gates. Later memory/disk parsing still requires its own project and responder-value gate.
 
 The [roadmap](ROADMAP.md) defines deliverables, prerequisites, tests, and one owner per milestone. [Agent handoffs](docs/agent-handoffs.md) define how owners exchange facts without repeating broad discovery. [AGENTS.md](AGENTS.md) and the [roadmap agent brief](agents/roadmap.md) limit work in this repository.
 
