@@ -1,5 +1,7 @@
 # Standalone release ledger
 
+## Recorded published baseline
+
 Recorded 2026-11-16 by the publishing coordinator. Each tool was built, installed, reviewed and tested independently. These observations apply to the exact revisions below; they do not grant broad lab qualification.
 
 | Tool / version | Published revision | Local installed suite | Installed acceptance |
@@ -69,3 +71,54 @@ Earlier HashBrown native transfer of inert files and interrupted-download recove
 - **HashBrown physical A2 remains NOT EXECUTED:** designated Windows VM/device/destination, actual disk/WinPmem capture, driver compatibility, read errors, independent image readability/content/extent and large-image throughput. Qualification remains `not_granted` without that evidence.
 
 Search and detached verification do not require those live resources. Matching hashes establishes agreement with reference bytes, not capture completeness or authenticity. No real cases, credentials, event payloads, runtime executables or image files were committed to the public repositories.
+
+
+## Local review tranche: separate from published releases
+
+### Version continuity and Git release conventions
+
+- Keep each tool's existing version sequence and release conventions. The recorded published baselines for this review are **BEC 0.8.0**, **CrumbTrail 0.3.0**, and **HashBrown 0.3.0**. These local review changes do not bump package versions, create release tags, or reset numbering. A locally installed build can still display its base version; identify it by the base commit plus the reviewed local diff, not that number alone.
+- Before an approved release, check the tool's actual upstream release history, then select its next version independently based on compatibility and scope. Keep the package metadata, CLI version, README, release notes, and tags (where the repo uses them) aligned. Do not use one suite-wide version or introduce a tagging scheme merely because the other repos use it.
+- Flapjacks is a product rename of the existing M365 investigator, not a new version lineage. Keep the published main and draft audit baselines separate; do not invent a version or tag if the repository has no established one. Response Menu remains documentation-only and records each tool's released version, revision and validation; it does not define runtime versions.
+- Evidence-contract versions are independent of product versions. For example, the mailbox snapshot schema stays at v1 unless its format changes incompatibly. Keep release/version changes and publication behind the separate Git approval.
+
+
+The following is a planning/status structure, not a claim that new code has shipped. Historical counts above apply only to their pinned releases. Do not add local tests to those totals, promote a draft PR to main, or mark a capability qualified based on another tool's suite.
+
+| Tool | Review base | Local change under review | Validation status for new work |
+| --- | --- | --- | --- |
+| BEC | `07c4593215d11db0e8d2ebc57e2797e000c85e12` | Optional mailbox snapshot import and incident view | 88 local offline tests passed; no new release or live E2 qualification |
+| Flapjacks | Published main `3490b92126d020794b8951dfa7ae0275cad94703`; separate draft PR #1 `eea3134e5969c2ac37343815b8bb9de43dafd865` | M365 audit positioning and optional snapshot export | Mac PowerShell suite passed, including 152 toolkit checks, 50 mailbox snapshot checks and 167 audit assertions; not full tenant qualification or published main behavior |
+| CrumbTrail | `e1317275714c472b516db2a4576e20d59ea4f65c` | Offline correctness and collection guardrails | 79 passed, 2 optional-parser errors, 1 Windows-only skip in local Mac run; synthetic demo passed, wider W2 still open |
+| HashBrown | `859c46f30767bd468f40de76a717c11e9b92bc52` | Generic existing-evidence registration | 102 local tests passed, 2 platform skips; separate offline manifest handoff verification passed; no A2 capture qualification |
+| Response Menu | `ac4f3af91025b305aaa81539ffa5637d04183d90` | Documentation menu, artwork, handoffs and ledger structure | Local Markdown/TOML, JSON-example and banner checks passed on macOS Python 3.11.15; not a hosted CI or sibling runtime claim |
+
+Flapjacks baseline provenance: [published main](https://github.com/FordTruckMonth/m365-bec-investigator/tree/3490b92126d020794b8951dfa7ae0275cad94703), [draft PR source](https://github.com/FordTruckMonth/m365-bec-investigator/tree/eea3134e5969c2ac37343815b8bb9de43dafd865). The selected product name does not imply a GitHub rename. Draft audit and Pull Logs functionality must not be described as already published main behavior.
+
+### Evidence required to advance each local row
+
+Record a separate entry per capability:
+
+```text
+Tool / capability / accountable owner:
+Base commit / local diff identifier / final commit if published later:
+Status: planned | implemented | fixture validated | lab qualified | field evaluated
+Inputs and expected facts (synthetic flag, source/evidence class):
+Command / OS / runtime / isolated environment:
+Actual passed / failed / skipped / not-run counts and limits:
+Evidence location / artifact hashes / reviewer:
+Target effects: none, or separately authorized exact scope:
+Local writes: destinations, original preservation and overwrite behavior:
+Interchange peer revision / fixture hash / observed compatibility (if tested):
+Hosted run for exact published SHA: not run unless independently verified
+Remaining qualification / next owner action:
+```
+
+Use this ledger as the single status source; workflow and roadmap documents link here rather than inventing new release numbers or test counts. Documentation CI checks local file targets and TOML parsing only; it does not verify remote links, sibling releases, schema interoperability, live safety or lab qualification. Branch protection and permission changes remain separate decisions.
+
+
+### Response Menu local documentation check, 2026-11-16
+
+Against the uncommitted local tree based on `ac4f3af`, the existing workflow's Python Markdown-target/TOML checks passed on macOS using installed Python 3.11.15: 32 local references across 11 Markdown documents. The optional-contract JSON example parsed and its required source/status structure passed a local assertion. This tests documentation syntax, not producer/consumer interoperability. `git diff --check` passed. The initial attempt with the macOS default Python 3.9.6 could not import `tomllib`; the successful rerun used the already installed Python 3.11.15, not a newly installed dependency. Hosted CI's Python 3.12/Linux environment was not exercised.
+
+The approved banner was visually inspected and copied byte-for-byte; SHA-256 `aef2ed02edd030666f79440180a09122a2388f1f3b90f52b5b6f611110bc76b0`. No sibling runtime tests, live provider calls, endpoint operations, publication or new release validation were performed by the documentation task. Other local rows remain pending their owner packets.

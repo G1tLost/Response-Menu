@@ -1,8 +1,12 @@
 # Response Menu
 
+![Pixel-art diner menu with incident-response tools and a planning dashboard](docs/assets/Response-Menu-Banner.png)
+
 A small planning repository for independent incident-response tools. It records scope, priorities, validation gaps, and handoffs so each tool can become useful on its own.
 
 **This repository contains documentation only.** It has no executable toolkit, shared engine, dispatcher, orchestration service, installer, or required evidence store. Installing one response tool must not install or import another response tool.
+
+See [setup and prerequisites](docs/setup.md) to read, clone, or validate these planning documents. No suite installation is required.
 
 ## Independent projects
 
@@ -11,15 +15,20 @@ Each tool has its own public repository, package, installation and agent role.
 | Repository | Responder outcome | Scope owner |
 | --- | --- | --- |
 | [BEC](https://github.com/G1tLost/BEC) | Investigate email/account compromise and produce an evidence-linked report | BEC agent |
+| [Flapjacks](https://github.com/FordTruckMonth/m365-bec-investigator) | Audit Microsoft 365 configuration with evidence-linked observations and explicit coverage gaps | M365 audit agent |
 | [CrumbTrail](https://github.com/G1tLost/CrumbTrail) | Build a Windows event chronology, surface useful observations, and show telemetry gaps | Windows triage agent |
 | [HashBrown](https://github.com/G1tLost/HashBrown) | Acquire disk/RAM evidence and record transfer integrity and custody | Acquisition agent |
 | [Response Menu](https://github.com/G1tLost/Response-Menu) | Keep priorities, boundaries, and acceptance evidence clear | Roadmap agent |
 
-Each executable project targets its own pip-installable distribution, CLI, code, tests, CI, fixtures, dependencies, and documentation. Runtime dependencies on the other repositories are forbidden. A tool must work from its own checkout or installation without sibling repositories, submodules, or a common parent package.
+Each executable project owns its distribution, CLI, code, tests, CI, fixtures, dependencies, and documentation. BEC, CrumbTrail and HashBrown target independent Python packages; Flapjacks is PowerShell and does not require Python. Runtime dependencies on the other repositories are forbidden. A tool must work from its own checkout or installation without sibling repositories, submodules, or a common parent package.
 
 Users may choose one tool or several. Each owns its local evidence format and reporting. HashBrown's detached handoff format belongs to HashBrown; it does not introduce a shared schema or require another tool.
 
-## Current offline evidence work
+## Local work in review
+
+Flapjacks is the selected M365 auditor name; its repository has not been renamed. The [workflow menu](docs/tool-workflows.md) separates released baselines from local proposals, defines target-read-only versus local evidence writes, and describes the optional mailbox snapshot v1 handoff. This is a documentation menu, not a launcher. New local changes are not shipped releases or live qualification. The [release ledger](docs/release-validation.md) remains the source of validation status.
+
+## Recorded published offline baselines
 
 | Tool and owner | Implemented outcome | Supplied evidence and release state |
 | --- | --- | --- |

@@ -7,12 +7,19 @@ Handoffs transfer the facts needed for one bounded task. They do not transfer ow
 | Owner | Repository and exclusive subject | Useful handoff facts |
 | --- | --- | --- |
 | BEC agent | BEC: email/account compromise | Provider/input coverage, email CLI/package behavior, report evidence links, standalone checks, live API limitations |
+| M365 audit agent | Flapjacks: Microsoft 365 configuration audit | Published/draft revision distinction, stable control IDs, permission/licensing gaps, snapshot export class and exact target binding, PowerShell checks |
 | Windows triage agent | CrumbTrail: Windows event triage | Supported event inputs, chronology/findings behavior, source locators, time handling, coverage gaps, standalone checks |
 | Acquisition agent | HashBrown: disk/RAM acquisition and evidence handling | Source/transport support, resume/hash/custody behavior, partial states, standalone checks, real acquisition qualification limits |
 | Roadmap agent | Response-Menu: planning | Milestones, dependencies, acceptance language, owner assignment, unresolved planning decisions |
 | Coordinator | Publishing and integration administration | Authoritative revision/status ledger, repository destinations, explicit task assignments, owner-supplied acceptance results |
 
 Each executable repository owns its own code, fixtures, tests, CI, CLI, dependencies, and evidence files. Neither this map nor a handoff creates a shared runtime or mandatory file contract.
+
+## Optional mailbox snapshot handoff
+
+The [mailbox snapshot v1 proposal](tool-workflows.md#optional-mailbox-snapshot-v1) is an optional Flapjacks producer / BEC consumer contract, not a shared package. The coordinator supplies the same schema and synthetic fixture to both owners. Each owner keeps its implementation and tests in its own repository. Exchange fixture hash, exact revisions, invocation, result and coverage dispositions before claiming interoperability. A schema agreement alone is not a passing integration test. Do not copy unlicensed implementation code between projects.
+
+The strict tranche consumes existing offline files and creates only explicitly selected local outputs. It does not grant tenant authentication, remote collection, search-job creation or remediation. Local evidence writes are not target writes, but must still preserve originals.
 
 ## Task packet
 

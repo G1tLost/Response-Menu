@@ -8,11 +8,25 @@ BEC 0.8.0 search and HashBrown 0.3.0 detached handoff are published with passing
 
 BEC remains email/account focused. CrumbTrail remains offline/local; remote orchestration is deferred. HashBrown owns acquisition and custody in its own package. Live tenant qualification, exported-EVTX acceptance across supported systems, and actual RAM/physical-disk capture remain open. Offline releases do not close those lab gates.
 
-`BEC` owns email/account compromise. `CrumbTrail` owns Windows event triage. `HashBrown` owns disk/RAM acquisition, integrity, and custody. `Response-Menu` owns planning documents. Every executable project must be independently pip-installable and have its own code, CLI, tests, CI, fixtures, and dependency declarations. None may import or require another project at runtime.
+`BEC` owns email/account compromise. `CrumbTrail` owns Windows event triage. `HashBrown` owns disk/RAM acquisition, integrity, and custody. `Response-Menu` owns planning documents. Every executable project must be independently installable and have its own code, CLI, tests, CI, fixtures, and dependency declarations. Flapjacks owns Microsoft 365 configuration audit in PowerShell; it is not a Python package or a replacement for BEC historical investigation. None may import or require another project at runtime.
 
 Keep functionality within its owner. Email provider clients stay in BEC; Windows event interpretation stays in CrumbTrail; acquisition and binary transfer stay in HashBrown. Future work consumes the relevant owner handoff. There is no shared engine or continuing synchronization of mixed-purpose implementations.
 
-## Current offline milestones
+## Local review tranche (not published)
+
+Use the [tool workflows](docs/tool-workflows.md) for inputs, outputs, side effects and handoffs. Preserve the published baselines below until new revision-specific evidence is accepted into the [ledger](docs/release-validation.md).
+
+| Milestone | Single owner | Responder outcome / deliverable | Prerequisites and acceptance handoff |
+| --- | --- | --- | --- |
+| E5: current mailbox state beside historical activity | BEC agent | Optional offline mailbox snapshot v1 import with source pointers and byte hash, preserving event-time vs snapshot-time distinction | Exact tenant/mailbox binding; shared synthetic case; mismatch, tamper and denied/partial coverage tests; send commands/results to coordinator |
+| F1: configuration audit and snapshot export | M365 audit agent | Flapjacks audit categories, stable control IDs and optional snapshot producer | Distinguish published main from draft audit branch; PowerShell fixture validation; synthetic export accepted by BEC before compatibility claim; retain historical collection until parity verified |
+| W3: offline event correctness | Windows triage agent | Consistent boundary-aware findings/session association and explicit offline inputs | ID reuse, logoff/startup, ambiguous roles, source preservation and resource bounds tested; broader W2 remains open |
+| A5: generic existing-evidence registration | Acquisition agent | Optional custody registration for existing artifacts, without acquisition | Scope/original-vs-derived metadata and guarded I/O; tamper, partial, unsafe-path and interrupted handoff tests; separate local case writes from detached checks |
+| R1: workflow menu and evidence ledger | Roadmap agent | Flapjacks lineup, bounded runbooks, optional contract and separated validation statuses | Local Markdown links, TOML and diff hygiene; owner-provided results only; no launcher, remote writes or live calls |
+
+No live targets, security/configuration changes, production PendingUpdates integration, publishing or repository rename are part of this tranche. Live read permission and platform qualification require separate designated scope; the offline tranche does not authorize them.
+
+## Recorded published offline milestones
 
 These bounded changes provide useful work without live credentials or a capture VM. Each has one owner and uses only its own repository, code, and evidence format.
 
