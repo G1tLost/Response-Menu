@@ -1,6 +1,8 @@
 # Response Menu
 
-![Pixel-art diner menu with incident-response tools and a planning dashboard](docs/assets/Response-Menu-Banner.png)
+![Pixel-art diner with a stepped monitor chart and pixel steam](docs/assets/Response-Menu-Banner.gif)
+
+[View the still banner](docs/assets/Response-Menu-Banner.png)
 
 A small planning repository for independent incident-response tools. It records scope, priorities, validation gaps, and handoffs so each tool can become useful on its own.
 
@@ -11,6 +13,19 @@ See [setup and prerequisites](docs/setup.md) to read, clone, or validate these p
 ## Pick a tool
 
 [![BEC: bacon, egg and cheese sandwich](docs/assets/BEC.png)](https://github.com/G1tLost/BEC) [![CrumbTrail: toast](docs/assets/CrumbTrail.png)](https://github.com/G1tLost/CrumbTrail) [![HashBrown: hash brown](docs/assets/HashBrown.png)](https://github.com/G1tLost/HashBrown) [![Flapjacks: pancakes](docs/assets/Flapjacks.png)](https://github.com/FordTruckMonth/Flapjacks)
+
+## Permissions at a glance
+
+Response Menu is documentation only. Reading it or checking its Markdown links does **not** require Microsoft 365, Google Workspace, Active Directory, or endpoint administrator access. There is no shared service account or suite-wide permission grant.
+
+| Tool | Microsoft 365 | Google Workspace | On-premises Active Directory | Local or host access |
+| --- | --- | --- | --- | --- |
+| [Flapjacks](https://github.com/FordTruckMonth/Flapjacks) | Approved delegated Graph reads and, for applicable checks, matching Exchange/Purview sessions. Identity-only sign-in does not unlock the audit scopes. | Not used. | Not used; Microsoft Entra is separate. | PowerShell and access to the checkout; write only if saving local results. [Authentication and setup](https://github.com/FordTruckMonth/Flapjacks/blob/main/terminal/docs/AUTHENTICATION.md) |
+| [BEC](https://github.com/G1tLost/BEC) | Admin-consented Graph **application** permissions for the chosen live collectors, with separate trace provisioning where applicable. | Delegated service account and an authorized reports admin for Admin SDK audit reports; no Gmail mailbox access scope. | No native collector; no AD privileges required. | Read supplied exports and write the local case; no provider credentials for offline work. [Microsoft setup](https://github.com/G1tLost/BEC/blob/main/docs/security.md) · [Workspace setup](https://github.com/G1tLost/BEC/blob/main/docs/workspace.md) |
+| [CrumbTrail](https://github.com/G1tLost/CrumbTrail) | No cloud permissions. | Not used. | No directory bind or cloud API permissions. | Access to the input Windows artifacts and local output. Collecting protected source artifacts separately may require channel- or host-specific access. |
+| [HashBrown](https://github.com/G1tLost/HashBrown) | No cloud permissions. | Not used. | Not used. | Existing-evidence registration requires local file access. Direct acquisition is a separate workflow with its own platform prerequisites; don't grant host privileges for offline verification. |
+
+Provision only the permissions for the mode you plan to use. The tool-specific README and setup docs are the source of truth for exact scopes, role assignments, licensing, prerequisites, and unsupported platforms. A missing source is a coverage gap, not a passing check.
 
 ## Independent projects
 
