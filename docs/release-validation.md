@@ -73,7 +73,11 @@ Earlier HashBrown native transfer of inert files and interrupted-download recove
 Search and detached verification do not require those live resources. Matching hashes establishes agreement with reference bytes, not capture completeness or authenticity. No real cases, credentials, event payloads, runtime executables or image files were committed to the public repositories.
 
 
-## Local review tranche: separate from published releases
+## Published on main: 2026-11-17
+
+The reviewed changes are on the default branches for [BEC](https://github.com/G1tLost/BEC/tree/96b211803c4e7417b148e6cc5686289c83f00730), [CrumbTrail](https://github.com/G1tLost/CrumbTrail/tree/eddd714158ebcc0951069d3e78fa34d4777da1eb), [HashBrown](https://github.com/G1tLost/HashBrown/tree/7cc2f8c23d03527a4cb2db240a7e2a7e472fb4dc), [Flapjacks](https://github.com/FordTruckMonth/Flapjacks/tree/aca99b8aec3588bca5701f354f2c604dbbc972f0), and [Response Menu](https://github.com/G1tLost/Response-Menu/tree/e4b9490d9501f068c6b1ac1663a571f23c650eeb). The Flapjacks repository was renamed from `m365-bec-investigator`; the tenant audit and Pull Logs are on `main`. No new release tags or live qualification are implied. The table below is the historical pre-merge review record.
+
+## Historical review tranche: separate from tagged releases
 
 ### Version continuity and Git release conventions
 
@@ -93,7 +97,7 @@ The following is a planning/status structure, not a claim that new code has ship
 | HashBrown | `859c46f30767bd468f40de76a717c11e9b92bc52` | Generic existing-evidence registration | 102 local tests passed, 2 platform skips; separate offline manifest handoff verification passed; no A2 capture qualification |
 | Response Menu | `ac4f3af91025b305aaa81539ffa5637d04183d90` | Documentation menu, artwork, handoffs and ledger structure | Local Markdown/TOML, JSON-example and banner checks passed on macOS Python 3.11.15; not a hosted CI or sibling runtime claim |
 
-Flapjacks baseline provenance: [published main](https://github.com/FordTruckMonth/m365-bec-investigator/tree/3490b92126d020794b8951dfa7ae0275cad94703), [draft PR source](https://github.com/FordTruckMonth/m365-bec-investigator/tree/eea3134e5969c2ac37343815b8bb9de43dafd865). The selected product name does not imply a GitHub rename. Draft audit and Pull Logs functionality must not be described as already published main behavior.
+Flapjacks baseline provenance: [published main](https://github.com/FordTruckMonth/Flapjacks/tree/3490b92126d020794b8951dfa7ae0275cad94703), [draft PR source](https://github.com/FordTruckMonth/Flapjacks/tree/eea3134e5969c2ac37343815b8bb9de43dafd865). These links pin the historical pre-merge inputs; the merged revision and current naming are recorded above.
 
 ### Evidence required to advance each local row
 
