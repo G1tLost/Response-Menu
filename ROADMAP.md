@@ -1,34 +1,34 @@
 # Roadmap
 
-Updated from owner handoffs on 2026-11-16. Statuses distinguish published offline functionality, lab preparation, exercised checks, and qualification. No fixed delivery dates are promised before designated targets, expected facts, and the support matrices are known.
+Status snapshot: 2026-11-17, from coordinator-verified public revisions and owner handoffs. Implementation on main, package versions, release tags, exercised checks, and qualification are separate claims. No fixed delivery dates are promised before designated targets, expected facts, and the support matrices are known.
 
 ## Status and boundaries
 
-BEC 0.8.0 search and HashBrown 0.3.0 detached handoff are published with passing fresh-wheel checks and CI. CrumbTrail 0.3.0 is published and passed independent wheel/base-smoke/isolated-test, actual native-runner and Windows/Linux CI checks, closing its exercised precision subgate. Exact release and CI evidence belongs in the [release validation ledger](docs/release-validation.md). The [offline evidence iteration](docs/offline-evidence-iteration.md) contains the current owner facts and limits.
+The current public revisions are listed below. No Git tags or GitHub Releases were observed in the coordinator's 2026-11-17 check; code on main does not by itself establish a package release or acceptance of every milestone condition. Each tool keeps its own version sequence. Exact build, test and CI evidence belongs in the [release validation ledger](docs/release-validation.md); the November 16 wheel and native checks below remain historical evidence for their pinned builds.
 
 BEC remains email/account focused. CrumbTrail remains offline/local; remote orchestration is deferred. HashBrown owns acquisition and custody in its own package. Live tenant qualification, exported-EVTX acceptance across supported systems, and actual RAM/physical-disk capture remain open. Offline releases do not close those lab gates.
 
-`BEC` owns email/account compromise. `CrumbTrail` owns Windows event triage. `HashBrown` owns disk/RAM acquisition, integrity, and custody. `Response-Menu` owns planning documents. Every executable project must be independently installable and have its own code, CLI, tests, CI, fixtures, and dependency declarations. Flapjacks owns Microsoft 365 configuration audit in PowerShell; it is not a Python package or a replacement for BEC historical investigation. None may import or require another project at runtime.
+`BEC` owns per-incident email/account evidence and timelines. `Flapjacks` owns selected organization-wide Microsoft 365 configuration and control-posture checks in PowerShell. `CrumbTrail` owns Windows event triage. `HashBrown` owns disk/RAM acquisition, integrity, and custody. `Response-Menu` owns planning documents. Every executable project must be independently installable and have its own code, CLI, tests, CI, fixtures, and dependency declarations. Flapjacks is not a Python package or a replacement for BEC historical investigation. None may import or require another project at runtime.
 
 Keep functionality within its owner. Email provider clients stay in BEC; Windows event interpretation stays in CrumbTrail; acquisition and binary transfer stay in HashBrown. Future work consumes the relevant owner handoff. There is no shared engine or continuing synchronization of mixed-purpose implementations.
 
-## Local review tranche (not published)
+## Current capabilities on public main
 
-Use the [tool workflows](docs/tool-workflows.md) for inputs, outputs, side effects and handoffs. Preserve the published baselines below until new revision-specific evidence is accepted into the [ledger](docs/release-validation.md).
+Use the [tool workflows](docs/tool-workflows.md) for inputs, outputs, side effects and handoffs. These formerly local-review milestones now have implementations on public main at the revisions below. Publication does not close their remaining acceptance gates. Owner packets must identify the tested revision, inputs, commands, results and limits before the [ledger](docs/release-validation.md) records a stronger validation claim.
 
-| Milestone | Single owner | Responder outcome / deliverable | Prerequisites and acceptance handoff |
+| Milestone | Single owner / public revision | Responder outcome / deliverable | Prerequisites, remaining tests and handoff |
 | --- | --- | --- | --- |
-| E5: current mailbox state beside historical activity | BEC agent | Optional offline mailbox snapshot v1 import with source pointers and byte hash, preserving event-time vs snapshot-time distinction | Exact tenant/mailbox binding; shared synthetic case; mismatch, tamper and denied/partial coverage tests; send commands/results to coordinator |
-| F1: configuration audit and snapshot export | M365 audit agent | Flapjacks audit categories, stable control IDs and optional snapshot producer | Distinguish published main from draft audit branch; PowerShell fixture validation; synthetic export accepted by BEC before compatibility claim; retain historical collection until parity verified |
-| W3: offline event correctness | Windows triage agent | Consistent boundary-aware findings/session association and explicit offline inputs | ID reuse, logoff/startup, ambiguous roles, source preservation and resource bounds tested; broader W2 remains open |
-| A5: generic existing-evidence registration | Acquisition agent | Optional custody registration for existing artifacts, without acquisition | Scope/original-vs-derived metadata and guarded I/O; tamper, partial, unsafe-path and interrupted handoff tests; separate local case writes from detached checks |
-| R1: workflow menu and evidence ledger | Roadmap agent | Flapjacks lineup, bounded runbooks, optional contract and separated validation statuses | Local Markdown links, TOML and diff hygiene; owner-provided results only; no launcher, remote writes or live calls |
+| E5: current mailbox state beside historical activity | BEC agent / [2d9f59d](https://github.com/G1tLost/BEC/tree/2d9f59dbe388d54e5243b1dc004e9ede9d0705f7) | Optional offline mailbox snapshot v1 import with source pointers and byte hash; a separate incident companion, not an automatic input to ordinary timelines. Keep event time distinct from snapshot time | Exact tenant/mailbox binding and mismatch, tamper and denied/partial coverage evidence; shared synthetic fixture and both peer revisions before any interoperability claim. Owner sends commands/results to coordinator; live E2 stays open |
+| F1: configuration audit and snapshot export | M365 audit agent / [5d7904c](https://github.com/PendingUpdates/Flapjacks/tree/5d7904c521113d53a9f8d3a60e0f84574f34e1d4) | Public Audit and Pull Logs, selected organization-wide M365 posture checks, stable control IDs and optional snapshot export | Owner supplies exact-revision PowerShell results and workload/permission limits; fixture acceptance by BEC is required before compatibility claims. Keep unmapped, prototype and unassessed controls distinct; live workload qualification remains separate |
+| W3: offline event correctness | Windows triage agent / [d1dcb1f](https://github.com/G1tLost/CrumbTrail/tree/d1dcb1fc559a6baae5a3d91e8a45bdf5bcbee9d1) | Offline/local boundary-aware findings, session association and explicit event inputs | Owner hands off exact-revision ID-reuse, logoff/startup, ambiguous-role and source-preservation results, plus remaining resource/native acceptance gaps. Broader W2 stays open; no remote orchestration |
+| A5: generic existing-evidence registration | Acquisition agent / [5eb2c19](https://github.com/G1tLost/HashBrown/tree/5eb2c195f9937199e1152e4a6e02ed5b846deb82) | Public optional custody registration and verification of existing artifacts, without acquiring them | Owner supplies scope/original-vs-derived metadata and tamper, partial, unsafe-path and interrupted-handoff evidence; distinguish local case writes from detached checks. Physical-disk/RAM A2 stays open |
+| R1: workflow menu and evidence ledger | Roadmap agent / [99cd089](https://github.com/G1tLost/Response-Menu/tree/99cd08945122c4f8f4b2ed4258ea010db4f42705) | Public Flapjacks lineup, bounded runbooks, optional contract and separated validation statuses | Documentation updates need full reread, local Markdown links, TOML and diff checks, then a coordinator handoff with owner-provided claims and exact revisions. New local edits are not published by this status table |
 
-No live targets, security/configuration changes, production PendingUpdates integration, publishing or repository rename are part of this tranche. Live read permission and platform qualification require separate designated scope; the offline tranche does not authorize them.
+This roadmap does not authorize live targets, security/configuration changes, production integration, publishing or repository renames. Live read permission and platform qualification require separate designated scope. No launcher or shared runtime is introduced.
 
-## Recorded published offline milestones
+## Historical published baseline: 2026-11-16
 
-These bounded changes provide useful work without live credentials or a capture VM. Each has one owner and uses only its own repository, code, and evidence format.
+These version numbers and acceptance results describe the pinned builds in the [November 16 ledger](docs/release-validation.md#recorded-published-baseline), not every later main revision. The bounded changes provide useful work without live credentials or a capture VM. Each has one owner and uses only its own repository, code, and evidence format.
 
 | Milestone | Single owner | Implemented responder outcome | Evidence and boundary |
 | --- | --- | --- | --- |
@@ -38,7 +38,7 @@ These bounded changes provide useful work without live credentials or a capture 
 
 CrumbTrail's exact extraction uses its pinned optional `python-evtx==0.8.1` extra. Native raw results remain immutable; the registered sidecar carries exact values. Portable validation needs neither the original source file nor that parser. Source and collector copies remained unchanged in exercised checks. This is CrumbTrail's own format and dependency, not a toolkit-wide schema or runtime.
 
-The [current iteration record](docs/offline-evidence-iteration.md) separates implemented behavior, exercised results, and release evidence. Earlier comparison/session/preflight work remains in the [offline release history](docs/current-iteration.md); the [0.2.1 lab history](docs/lab-iteration.md) preserves the former precision failure with an explicit closure pointer.
+The [November 16 offline iteration record](docs/offline-evidence-iteration.md) separates implemented behavior, exercised results, and release evidence for that baseline. Earlier comparison/session/preflight work remains in the [offline release history](docs/current-iteration.md); the [0.2.1 lab history](docs/lab-iteration.md) preserves the former precision failure with an explicit closure pointer.
 
 ## Remaining qualification priorities
 
@@ -54,7 +54,7 @@ Hashes verify bytes against a recorded reference; detached handoff and preserved
 
 ## Responder outcomes first
 
-BEC should help explain an email/account incident using available provider evidence and a reviewable report. CrumbTrail should help a responder understand observable Windows events, the affected host/account context, and what telemetry is missing. HashBrown should make it clear what was requested, what was obtained, whether transferred bytes verified, and what custody actions occurred.
+BEC should help explain a specific email/account incident using available provider evidence and a reviewable timeline/report. Flapjacks should help an operator assess selected organization-wide M365 controls and see unsupported or unassessed areas; configuration posture alone does not establish what happened in an incident. CrumbTrail should help a responder understand observable Windows events, the affected host/account context, and what telemetry is missing. HashBrown should make it clear what was requested, what was obtained, whether transferred bytes verified, and what custody actions occurred.
 
 Preserve distinctions between observation, hypothesis, and analyst confirmation. An empty result is not evidence of an uncompromised system when telemetry is absent, inaccessible, expired, or unsupported. Acquisition completeness, transfer integrity, and parser success are different claims.
 
